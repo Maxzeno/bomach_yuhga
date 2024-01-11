@@ -1,0 +1,100 @@
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Blog detail - yuhga</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% include "./include/head.html" %}
+
+</head>
+
+<body>
+{% include "./include/header_others.html" %}
+
+<!--    Page title area start here-->
+<div class="page-title-area pt-70 pb-70" data-background="{% static 'assets/img/bomach/new/Bomach-Engineering.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page-title-wrapper text-center">
+                    <h1 class="page-title">{{ blog.title }}</h1>
+                    <div class="breadcrumb breadcrumb-list">
+                        <nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs">
+                            <ul class="trail-items">
+                                <li  class="trail-item trail-begin">
+                                    <a href="/blog"><span >Blog</span></a>  
+                                </li>
+                                <li class="trail-item trail-end"><span>Blog Details</span></li>
+                            </ul>
+                        </nav>                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--   Page title area end here-->
+
+<!-- Blog area start here-->
+<div class="blog-area pt-120 pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 blog-post-items blog-padding">
+                <div class="blog__wrapper mr-50">
+                    <article id="post-79" class="blog__item-2 mb-70 format-image mb-50 post-79 post">
+                        <div class="blog__thumb-2 m-img">
+                        <img src="{{ blog.image_url }}" alt="img">
+                        </div>
+                        <div class="blog__content-2">
+                            <div class="post-meta mb-20">
+                                <span><i class="far fa-calendar-check"></i> {{blog.date|date:'F j, Y' }} </span>
+                                <span><i class="far fa-user"></i>{{ blog.author }}</span>
+                                <!-- <span><a href="blog-details"><i class="far fa-comments"></i> No Comments</a></span> -->
+                            </div>
+                            <h3>{{ blog.title }}</h3>
+                            <div class="active-like-link mb-30">
+                                <p>{{ blog.content|safe }}</p>
+                             </div>
+                        </div>
+                    </article>	
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog__sidebar">
+                    <div id="bdevs-latest-posts-2" class="sidebar__widget mb-50 widget_bdevs-latest-posts">
+                        <h4 class="sidebar__widget-title mb-50">
+                            Recent News
+                        </h4>     	
+                        <div class="sidebar__widget-content">
+                            <div class="rc-post"> 
+                                {% for i in blogs %}  	
+                                <div class="d-flex mb-20">
+                                    <div class="rc-thumb mr-15">
+                                        <a href="/blog/{{ i.slug }}"><div class="sidebar-posts-bg-thumb" data-background="{{ i.image_url }}"></div></a>
+                                    </div>
+                                    <div class="rc-text">
+                                        <h6><a href="/blog/{{ i.slug }}">{{ i.title }}</a></h6>
+                                        <div class="rc-meta">{{ i.date|date:'F j, Y' }} </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div> 
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog area end here-->
+
+{% include "./include/footer.html" %}
+{% include "./include/foot.html" %}
+
+</body>
+</html>
