@@ -18,11 +18,11 @@ def unique_id(model, col='id', length=6):
 
 def service_valid_options(service_model, sub_service_model):
 	try:
-	    service_pk = service_model.objects.order_by('-priority').first().pk
-	    sub_services = sub_service_model.objects.filter(service=service_pk).order_by('-priority')
-	    return [ sub_service.name for sub_service in sub_services ]
+		service_pk = service_model.objects.order_by('-priority').first().pk
+		sub_services = sub_service_model.objects.filter(service=service_pk).order_by('-priority')
+		return [ sub_service.name for sub_service in sub_services ]
 	except:
-	    return []
+		return []
 
 
 def send_email_quote(email, quote_model):
@@ -75,7 +75,11 @@ def send_user_booking_email(email, booking_model):
 		email = [email]
 	subject = 'Your Appointment has been booked'
 	message = f"""Your Appointment is on {booking_model.meeting_time.strftime("%A %d %B %Y by %I:%M%p")}
+<<<<<<< HEAD
 Best regards yuhga.
+=======
+Best regards Bomach Group.
+>>>>>>> bd647ab8c4c0c5b5427911c73d500efd81b661d9
 """
 	send_mail(subject, message, settings.EMAIL_HOST_USER, email, fail_silently=False)
 
