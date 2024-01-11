@@ -1,0 +1,48 @@
+
+to achieve the booking system functionality i will use get quote but i will a datetime field, the closes time should be 24 hours from current time
+
+
+in the booking template i will check if the datetime selected is available 
+
+default tawk.to widget color #03a84e
+
+
+add id to product
+
+
+light blue #4c4c9c
+blue #3f3f95ee
+
+
+collect static to something like cloudinary
+python manage.py collectstatic
+
+
+
+asgiref                   3.7.2
+bleach                    6.0.0
+certifi                   2023.5.7
+charset-normalizer        3.1.0
+cloudinary                1.33.0
+Django                    3.2.18
+django-ckeditor           6.0.0
+django-cloudinary-storage 0.3.0
+django-js-asset           2.0.0
+gunicorn                  20.1.0
+idna                      3.4
+Pillow                    9.5.0
+pip                       23.1.2
+psycopg2                  2.9.6
+PyMySQL                   1.1.0
+python-decouple           3.8
+pytz                      2023.3
+requests                  2.31.0
+setuptools                63.2.0
+six                       1.16.0
+sqlparse                  0.4.4
+typing_extensions         4.6.3
+tzdata                    2023.3
+urllib3                   1.26.16
+webencodings              0.5.1
+whitenoise                6.5.0
+
