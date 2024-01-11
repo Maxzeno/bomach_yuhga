@@ -66,7 +66,7 @@ if not TRY_LOCAL_STORAGE:
     INSTALLED_APPS.insert(9, 'cloudinary')
  
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-    # STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+    STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
     CLOUDINARY_STORAGE = {
         'CLOUD_NAME': 'dervdezl1',
@@ -132,11 +132,11 @@ elif TRY_MYSQL:
         DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'bomaoqrt_bomach_db',
+            'NAME': 'bomaoqrt_yuhgadb',
             'HOST': '127.0.0.1',
             'PORT': 3306,
-            'USER': 'bomaoqrt_emma',
-            'PASSWORD': '#56S6Ehh_f])_',
+            'USER': 'bomaoqrt_yuhgaemmadb',
+            'PASSWORD': 'pZ@ZSDVUen8XaA4',
             'OPTIONS': {
                 'charset': 'utf8mb4',
                 'sql_mode': 'strict_trans_tables',
@@ -313,5 +313,3 @@ SUMMERNOTE_CONFIG = {
 #         ]),
 #     }
 # }
-
-
